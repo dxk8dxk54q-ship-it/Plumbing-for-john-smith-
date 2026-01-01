@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Policy | FlowFix Plumbing</title>
+  <meta name="description" content="Privacy Policy for FlowFix Plumbing. How we handle your contact details, data usage and cookies.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/recovero-logo.png">
+</head>
+<body>
+
+  <div class="top-bar">
+    <span class="emoji">🔒</span>
+    <span>Privacy matters. Read how FlowFix uses your information.</span>
+    <a href="tel:+447700900123" class="top-bar-call">Call: 07700 900123</a>
+  </div>
+
+  <header class="site-header">
+    <div class="logo-wrap">
+      <img src="images/recovero-logo.png" alt="FlowFix logo" class="logo-img">
+      <div class="logo-text">
+        <span class="brand-name">FlowFix</span>
+        <span class="brand-tagline">Local Plumbing &amp; Drainage</span>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="breakdown-recovery.html" class="nav-link">Emergency Plumbing</a>
+      <a href="accident-recovery.html" class="nav-link">Leaks &amp; Burst Pipes</a>
+      <a href="vehicle-transport.html" class="nav-link">Blocked Drains</a>
+      <a href="areas-we-cover.html" class="nav-link">Areas We Cover</a>
+      <a href="terms.html" class="nav-link">Terms &amp; Conditions</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <h1>Privacy Policy</h1>
+      <p>Your privacy is important to us. This page explains what data we collect, why we collect it, and how it is used.</p>
+      <p class="small-note">Last updated: [DATE] • Contact: [Support email] | [Support phone] | [Company address]</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Data We Collect</h2>
+      <p>When you contact FlowFix by phone, WhatsApp or through forms on this site, we collect the details you provide such as your name, phone number, address, and a description of your plumbing issue. Basic website analytics or server logs may also capture IP addresses, browser types and access times.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>How We Use Your Data</h2>
+      <ul>
+        <li>To respond to your enquiry and arrange plumbing or drainage attendance.</li>
+        <li>To share essential details with an attending engineer or trusted contractor.</li>
+        <li>To improve our services and website experience.</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Sharing Your Data</h2>
+      <p>We only share your information with engineers or contractors who need it to deliver the Service you requested, or with service providers that help us operate our website and communications. We do not sell your personal data.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Data Retention</h2>
+      <p>We keep enquiry details for as long as necessary to handle your request, maintain records, and comply with legal or accounting obligations. If you want your data removed, contact us using the details above.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Your Rights</h2>
+      <p>You can request access to, correction of, or deletion of your personal data. You may also object to certain processing. Contact us to exercise these rights.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Cookies &amp; Tracking</h2>
+      <p>If analytics or tracking tools are used, they may set cookies to understand website usage. You can adjust your browser settings to refuse cookies or alert you when cookies are being sent.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Contact</h2>
+      <p>Questions about this policy? Email or call us using the contact details above.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© FlowFix Plumbing. Emergency plumbers in Portsmouth &amp; surrounding areas. <a href="terms.html">Terms &amp; Conditions</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+  <a href="tel:+447700900123" class="sticky-call">
+    <span>📞 Call FlowFix Now</span>
+    <span class="sticky-call-small">Emergency plumbing &amp; drainage support</span>
+  </a>
+
+  <script>
+    const track = (name, detail = {}) => {
+      console.log(name, detail);
+    };
+
+    document.querySelectorAll('a[href^="tel:+447700900123"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        track('click_call', { href: link.getAttribute('href') });
+      });
+    });
+
+    document.querySelectorAll('a[href^="https://wa.me/447700900123"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        track('click_whatsapp', { href: link.getAttribute('href') });
+      });
+    });
+  </script>
+
+</body>
+</html>
