@@ -380,6 +380,29 @@ form {
   margin-top: -0.3rem;
 }
 
+/* FAQ */
+
+.faq {
+  margin-bottom: 2.5rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.faq-item {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.faq-item h3 {
+  margin-top: 0;
+}
+
 /* Page hero */
 
 .page-hero {

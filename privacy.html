@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Policy | FlowFix Plumbing</title>
+  <meta name="description" content="Privacy Policy for FlowFix Plumbing. How we handle your contact details, data usage and cookies.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/recovero-logo.png">
+</head>
+<body>
+
+  <div class="top-bar">
+    <span class="emoji">🔒</span>
+    <span>Privacy matters. Read how FlowFix uses your information.</span>
+    <a href="tel:+447700900123" class="top-bar-call">Call: 07700 900123</a>
+  </div>
+
+  <header class="site-header">
+    <div class="logo-wrap">
+      <img src="images/recovero-logo.png" alt="FlowFix logo" class="logo-img">
+      <div class="logo-text">
+        <span class="brand-name">FlowFix</span>
+        <span class="brand-tagline">Local Plumbing &amp; Drainage</span>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="breakdown-recovery.html" class="nav-link">Emergency Plumbing</a>
+      <a href="accident-recovery.html" class="nav-link">Leaks &amp; Burst Pipes</a>
+      <a href="vehicle-transport.html" class="nav-link">Blocked Drains</a>
+      <a href="areas-we-cover.html" class="nav-link">Areas We Cover</a>
+      <a href="terms.html" class="nav-link">Terms &amp; Conditions</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <h1>Privacy Policy</h1>
+      <p>This policy explains how FlowFix Plumbing collects, uses and protects your personal data under UK GDPR.</p>
+      <p class="small-note"><strong>Contact details (to be completed by client):</strong> Data controller name, contact email, phone, postal address.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Data We Collect</h2>
+      <p>We collect information you provide when you call, use WhatsApp, or submit forms (e.g., name, phone, address, job details, preferred times). We may also collect basic technical data such as IP address, browser type, and access times for security and diagnostics.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Purpose &amp; Lawful Basis</h2>
+      <p>We process your data to respond to enquiries, schedule and deliver plumbing services, manage appointments, and keep records (lawful basis: contract). We may also use data for service improvement and basic analytics (lawful basis: legitimate interests).</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Sharing</h2>
+      <p>We share your data only with our employees or subcontractors who need it to deliver the service, and with service providers that help us run communications or website hosting. We do not sell your data.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Retention</h2>
+      <p>We keep enquiry and job records only as long as needed to deliver services, manage accounts, and meet legal or accounting obligations. When data is no longer required, we delete or anonymise it.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Your Rights</h2>
+      <p>You can request access, correction, deletion, restriction or objection to processing, and data portability where applicable. You can also complain to the ICO if you are unhappy with how we handle your data.</p>
+    </section>
+
+    <section class="content-card">
+      <h2>Contact</h2>
+      <p>To exercise your rights or ask questions about this policy, contact the data controller using the details above.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© FlowFix Plumbing. Emergency plumbers in Portsmouth &amp; surrounding areas. <a href="terms.html">Terms &amp; Conditions</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+  <a href="tel:+447700900123" class="sticky-call">
+    <span>📞 Call FlowFix Now</span>
+    <span class="sticky-call-small">Emergency plumbing &amp; drainage support</span>
+  </a>
+
+  <script>
+    const track = (name, detail = {}) => {
+      console.log(name, detail);
+    };
+
+    document.querySelectorAll('a[href^="tel:+447700900123"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        track('click_call', { href: link.getAttribute('href') });
+      });
+    });
+
+    document.querySelectorAll('a[href^="https://wa.me/447700900123"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        track('click_whatsapp', { href: link.getAttribute('href') });
+      });
+    });
+  </script>
+
+</body>
+</html>
