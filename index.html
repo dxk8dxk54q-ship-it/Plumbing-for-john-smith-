@@ -29,11 +29,10 @@
 
     <nav class="main-nav">
       <a href="index.html" class="nav-link active">Home</a>
-      <a href="breakdown-recovery.html" class="nav-link">Emergency Plumbing</a>
-      <a href="accident-recovery.html" class="nav-link">Leaks &amp; Burst Pipes</a>
-      <a href="vehicle-transport.html" class="nav-link">Blocked Drains</a>
+      <a href="#services" class="nav-link">Services</a>
       <a href="areas-we-cover.html" class="nav-link">Areas We Cover</a>
       <a href="terms.html" class="nav-link">Terms &amp; Conditions</a>
+      <a href="privacy.html" class="nav-link">Privacy Policy</a>
     </nav>
   </header>
 
@@ -108,6 +107,40 @@
       </div>
 
       <div class="two-col-block">
+        <h2>Request a Call-Back</h2>
+        <p>Prefer a phone call? Tell us what’s wrong and we’ll ring you back.</p>
+
+        <form id="callbackForm">
+          <div class="form-row">
+            <label for="callback-name">Your name</label>
+            <input id="callback-name" name="callback-name" type="text" placeholder="e.g. Alex" required>
+          </div>
+
+          <div class="form-row">
+            <label for="callback-phone">Phone number</label>
+            <input id="callback-phone" name="callback-phone" type="tel" placeholder="07…" required>
+          </div>
+
+          <div class="form-row">
+            <label for="callback-time">Best time to call</label>
+            <input id="callback-time" name="callback-time" type="text" placeholder="e.g. ASAP, this evening" required>
+          </div>
+
+          <div class="form-row">
+            <label for="callback-issue">What’s happened?</label>
+            <textarea id="callback-issue" name="callback-issue" rows="2" placeholder="Leak under sink, toilet not flushing, blocked shower, etc." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-dark full-width">
+            ☎️ Request a Call-Back
+          </button>
+          <p id="callbackStatus" class="small-note" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="two-column">
+      <div class="two-col-block">
         <h2>Why Homeowners Choose FlowFix</h2>
         <ul class="icon-list">
           <li><strong>Fast, local response</strong> – Portsmouth-based for quicker ETAs.</li>
@@ -116,10 +149,19 @@
           <li><strong>Respect for your home</strong> – clean work, tidy finish, polite engineers.</li>
         </ul>
       </div>
+      <div class="two-col-block">
+        <h2>How we work</h2>
+        <ul class="icon-list">
+          <li><strong>Diagnose first</strong> – we isolate the issue and confirm the plan.</li>
+          <li><strong>Your approval matters</strong> – no work starts without you saying yes.</li>
+          <li><strong>Transparent communication</strong> – we explain options and next steps.</li>
+          <li><strong>Safety focused</strong> – tidy work areas and respect for your property.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Services summary cards -->
-    <section class="services">
+    <section class="services" id="services">
       <h2>Plumbing Services We Cover</h2>
       <div class="service-grid">
         <article class="service-card">
@@ -193,6 +235,7 @@
       <p class="small-note">
         Pricing is indicative – final costs depend on access, parts, time and complexity. We’ll confirm as early as possible. See our <a href="terms.html">Terms &amp; Conditions</a> for details.
       </p>
+      <p class="small-note"><strong>Final price confirmed after diagnosis.</strong> No work starts without your approval.</p>
     </section>
 
     <!-- FAQ -->
@@ -295,6 +338,40 @@
       var url = "https://wa.me/447700900123?text=" + encoded;
 
       window.location.href = url;
+    });
+
+    // Request a call-back form
+    const callbackForm = document.getElementById('callbackForm');
+    const callbackStatus = document.getElementById('callbackStatus');
+
+    callbackForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      callbackStatus.textContent = "Sending your request…";
+
+      const payload = {
+        name: document.getElementById('callback-name').value.trim(),
+        phone: document.getElementById('callback-phone').value.trim(),
+        bestTime: document.getElementById('callback-time').value.trim(),
+        issue: document.getElementById('callback-issue').value.trim()
+      };
+
+      try {
+        await fetch('https://example.com/api/request-callback', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+        callbackStatus.textContent = "Thanks. We’ll call you back soon.";
+      } catch (error) {
+        console.error('callback_error', error);
+        callbackStatus.textContent = "We couldn’t send that automatically, but we’ve saved your details. Please call if urgent.";
+      }
+
+      track('submit_callback', payload);
+      callbackForm.reset();
     });
   </script>
 </body>
